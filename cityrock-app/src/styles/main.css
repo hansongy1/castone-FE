@@ -1,0 +1,25 @@
+/* main.css - 폭 고정 */
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    /*추가*/
+}
+
+.container {
+    width: 390px;
+    /* height: 790px;  */
+    /*지움*/
+    height: 200vh;
+    /*추가*/
+    height: -webkit-fill-available;
+    /*추가*/
+    height: fill-available;
+    /*추가*/
+    margin: 0 auto;
+    position: relative;
+    padding: 0;
+    z-index: 0;
+    /* background: #F6F6F6; */
+    
+}
