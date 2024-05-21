@@ -1,24 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+/* App.js */
+import { BrowserView, MobileView } from 'react-device-detect'
+import Header from "./components/Header"
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <section className='contents'>
+      <Header />
+      <BrowserView>
+        브라우저 뷰입니다.
+      </BrowserView>
+      <MobileView>
+        <p>모바일뷰입니다.</p>
+      </MobileView>
+    </section>
   );
 }
 
