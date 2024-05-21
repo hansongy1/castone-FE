@@ -1,6 +1,6 @@
 /* App.js */
 import { BrowserView, MobileView } from 'react-device-detect'
-import Header from "./components/Header"
+import Header from "./components/Header";
 
 function App() {
   return (
