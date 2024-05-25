@@ -14,7 +14,8 @@ body {
     /*추가*/
     height: -webkit-fill-available;
     /*추가*/
-    height: fill-available;
+    /* height: fill-available; */
+    height: stretch;
     /*추가*/
     margin: 0 auto;
     position: relative;
