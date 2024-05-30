@@ -32,6 +32,26 @@
     border-radius: 10px;
 }
 
+/* 노출 아이콘 */
+.password-box {
+    position: relative;
+    width: 339.6px;
+    display: flex;
+}
+
+.password-box input {
+    width: 100%;
+    border-radius: 0;
+}
+
+.password-box svg {
+    position: absolute; /* 추가 */
+    right: 10px; /* 추가 */
+    top: 50%; /* 추가 */
+    transform: translateY(-50%); /* 추가 */
+    cursor: pointer; /* 추가 */
+}
+
 /* 로그인 상태 유지 */
 .login-container form label {
     display: flex;
