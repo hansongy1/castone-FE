@@ -29,7 +29,7 @@ const Header = () => {
                     <li><Link to="/">홈</Link></li>
                     <li><Link to="/">공연</Link></li>
                     <li><Link to="/">전시</Link></li>
-                    <li><Link to="/">축제</Link></li>
+                    <li><Link to="/festival">축제</Link></li> {/* 수정된 부분 */}
                     <li><Link to="/">마이페이지</Link></li>
                     <li><Link to="/login">로그인(임시)</Link></li> {/* 이 부분이 추가되었습니다. */}
                 </ul>
