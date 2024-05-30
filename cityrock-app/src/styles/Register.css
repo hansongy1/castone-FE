@@ -1,0 +1,95 @@
+h2 {
+  font-weight: 900;
+  font-size: 24px;
+  margin: 0px;
+}
+
+.register-form {
+  margin-left: 33px;
+  padding-top: 0px;
+}
+
+input {
+  width: 314px;
+  height: 45px;
+  border-radius: 10px;
+  border: 2px solid #D7D7D7;
+  margin-top: 10px;
+}
+
+input[type=phonenumder] {
+  width: 236px;
+  margin-right: 10px;
+}
+
+input[placeholder]{
+  padding-left: 10px;
+}
+
+.accounttxt{
+  font-size: 14px;
+  font-weight: 550;
+  margin-top: 15px;
+}
+
+.phone-button{
+  background-color: black;
+  height: 47px;
+  width: 75px;
+  border-radius: 10px;
+  color: #FFFFFF;
+  font-size: 12px;
+}
+
+.register-button{
+  background-color: #A3A4B0;
+  height: 60px;
+  width: 334px;
+  border-radius: 10px;
+  color: #FFFFFF;
+  font-size: 18px;
+  border: 0px solid;
+  font-weight: 600;
+  margin-top: 25px;
+}
+
+.loginq{
+  text-align: center;
+  color: #A3A4B0;
+  font-size: 14px;
+  margin-right: 55px;
+  margin-top: 10px;
+
+}
+
+.loginq > span{
+  color: #A3A4B0;
+  font-weight: 800;
+  font-size: 14px;
+}
+/* styles/Register.css */
+.input-container {
+  position: relative;
+  width: 100%;
+}
+
+.password-input {
+  width: 100%;
+  padding-right: 40px; /* 아이콘 공간을 위해 오른쪽 패딩 추가 */
+  box-sizing: border-box; /* 패딩을 포함한 전체 너비를 유지 */
+}
+
+.icon-container {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon {
+  font-size: 1.2em;
+}

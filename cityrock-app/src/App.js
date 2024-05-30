@@ -6,6 +6,7 @@ import './styles/main.css'; /* 가운데 정렬 */
 import Login from "./pages/Login";
 import Home from "./components/Home";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Register from './Register';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home /> } />
             <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
           </Routes>
         </section>
       </div>
