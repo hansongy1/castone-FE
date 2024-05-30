@@ -54,7 +54,7 @@
 }
 
 .side-menu img {
-    float: right;
+    float: right; /* 오른쪽 정렬 */
     margin-right: 16px;
 }
 

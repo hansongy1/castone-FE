@@ -1,47 +1,65 @@
 /* Login.css */
 
+/* 왼쪽 정렬, margin-left: 33px; */
 .login-container {
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 2em;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-left: 33px;
 }
 
 .login-container h1 {
-    text-align: center;
+    /* text-align: center; 가운데 정렬 */
+    font-size: 24px;
+    /* background-color: #0056b3; */
+    margin: 0 auto;
+    padding: 56px 0px 28px;
 }
 
 .login-container form {
     display: flex;
     flex-direction: column;
+    width: 324px;
 }
 
 #login-container form section {
     margin-bottom: 1em;
 }
 
+.login-container form input {
+    /* padding: 0.5em; */
+    height: 46px;
+    font-size: 12px;
+    padding: 0px 12px;
+    border: 1.5px solid #D7D7D7;
+    margin-bottom: 12px;
+    border-radius: 10px;
+}
+
 .login-container form label {
-    margin-bottom: 0.5em;
+    display: flex;
     color: #333;
 }
 
-.login-container form input {
-    padding: 0.5em;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+input#remeber-check {
+    margin: 0;
+    padding: 0;
+    width: 18px;
+    height: 18px;
+
+}
+
+.login-container form label p {
+    font-size: 12px;
+    margin: 0;
 }
 
 .login-container form button {
     padding: 0.5em;
     color: #fff;
-    background-color: #007bff;
+    background-color: #A3A4B0;
     border: none;
     border-radius: 4px;
     cursor: pointer;
 }
 
 .login-container form button:hover {
-    background-color: #0056b3;
+    background-color: #000;
 }
