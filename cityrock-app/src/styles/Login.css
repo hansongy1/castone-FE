@@ -8,7 +8,6 @@
 .login-container h1 {
     /* text-align: center; 가운데 정렬 */
     font-size: 24px;
-    /* background-color: #0056b3; */
     margin: 0 auto;
     padding: 56px 0px 28px;
 }
@@ -33,31 +32,73 @@
     border-radius: 10px;
 }
 
+/* 로그인 상태 유지 */
 .login-container form label {
     display: flex;
     color: #333;
+    /* background-color: pink; */
+    margin-top: 5px;
+    margin-left: 6px;
+    margin-bottom: 65px;
 }
 
+/* 로그인 상태 유지 */
+input[type=checkbox] {
+    accent-color: #5E6871;
+}
 input#remeber-check {
     margin: 0;
     padding: 0;
     width: 18px;
     height: 18px;
-
+    /* color: #5E6871; */
+    border: 5;
+    border-radius: 0;
 }
 
 .login-container form label p {
+    height: 12px;
     font-size: 12px;
     margin: 0;
+    padding-top: 1px;
+    padding-left: 8px;
+    color: #504F4F;
+    /* background-color: rgb(253, 223, 228); */
+}
+
+/* 이메일/비밀번호 찾기 및 회원가입 */
+section.find-container {
+    display: flex;
+    margin: 0 auto;
+}
+
+section.find-container p {
+    margin: 0;
+    font-size: 12px;
+    color: #4A4949;
+}
+
+div.find-line {
+    width: 0.8px;
+    height: 13px;
+    margin: 1.5px 7px;
+    background-color: #4A4949;
 }
 
 .login-container form button {
-    padding: 0.5em;
+    height: 59px;
     color: #fff;
     background-color: #A3A4B0;
     border: none;
-    border-radius: 4px;
+    border-radius: 12px;
     cursor: pointer;
+    margin-top: 21px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.login-container form input:hover {
+    border-color: #000;
 }
 
 .login-container form button:hover {
