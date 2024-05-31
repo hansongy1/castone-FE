@@ -1,8 +1,8 @@
 /* Login.css */
 
-/* 왼쪽 정렬, margin-left: 33px; */
 .login-container {
-    margin-left: 33px;
+    width: 324px;
+    margin: 0px 33px 0px 33px;
 }
 
 .login-container h1 {
@@ -15,16 +15,12 @@
 .login-container form {
     display: flex;
     flex-direction: column;
-    width: 324px;
-}
-
-#login-container form section {
-    margin-bottom: 1em;
 }
 
 .login-container form input {
-    /* padding: 0.5em; */
+    width: 324px;
     height: 46px;
+    box-sizing: border-box;
     font-size: 12px;
     padding: 0px 12px;
     border: 1.5px solid #D7D7D7;
@@ -32,7 +28,7 @@
     border-radius: 10px;
 }
 
-/* 노출 아이콘 */
+/* 눈 아이콘 */
 .password-box {
     position: relative;
     width: 339.6px;
@@ -45,18 +41,21 @@
 }
 
 .password-box svg {
-    position: absolute; /* 추가 */
-    right: 10px; /* 추가 */
-    top: 50%; /* 추가 */
-    transform: translateY(-50%); /* 추가 */
-    cursor: pointer; /* 추가 */
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #A7A7A7;
+    margin-right: 22px;
+    width: 24px; /* 원하는 너비 설정 */
+    height: 24px; /* 원하는 높이 설정 */
 }
 
 /* 로그인 상태 유지 */
 .login-container form label {
     display: flex;
     color: #333;
-    /* background-color: pink; */
     margin-top: 5px;
     margin-left: 6px;
     margin-bottom: 65px;
@@ -66,6 +65,7 @@
 input[type=checkbox] {
     accent-color: #5E6871;
 }
+
 input#remeber-check {
     margin: 0;
     padding: 0;

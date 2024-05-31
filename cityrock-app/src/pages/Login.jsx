@@ -16,7 +16,7 @@ const Login = () => {
             <form action="post">
                 <input type="text" name="email" placeholder="이메일"/>
                 <div className="password-box">
-                    <input type={showPassword ? "text" : "password"} name="password" placeholder="비밀번호" />
+                    <input type={showPassword ? "text" : "password"} name="password" placeholder="비밀번호"/>
                     {showPassword ? <IoMdEyeOff onClick={() => setShowPassword(!showPassword)} /> : <IoMdEye onClick={() => setShowPassword(!showPassword)} />}
                 </div>
                 {/* <FontAwesomeIcon icon={faEye} /> */}
