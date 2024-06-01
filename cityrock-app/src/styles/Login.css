@@ -3,6 +3,7 @@
 .login-container {
     width: 324px;
     margin: 0px 33px 0px 33px;
+    background-color: rgb(253, 180, 171);
 }
 
 .login-container h1 {
@@ -20,7 +21,7 @@
 .login-container form input {
     width: 324px;
     height: 46px;
-    box-sizing: border-box;
+    box-sizing: border-box; /* 컨테이너에 맞게 맞춤 */
     font-size: 12px;
     padding: 0px 12px;
     border: 1.5px solid #D7D7D7;
