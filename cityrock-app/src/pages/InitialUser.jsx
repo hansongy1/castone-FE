@@ -2,8 +2,9 @@
 
 import React from "react";
 import "../styles/InitialUser.css";
-import Food from "../assets/food.png";
-import Nature from "../assets/nature.png";
+import Music from "../assets/keyword_001.png";
+import Food from "../assets/keyword_002.png";
+import Nature from "../assets/keyword_004.png";
 
 const InitialUser = () => {
     return (
@@ -16,7 +17,7 @@ const InitialUser = () => {
             <section className="category-items">
                 <div className="items-box">
                     <div className="music">
-                        <img src={Food} alt="Food" />
+                        <img src={Music} alt="Music" />
                         <p>뮤직</p>
                     </div>
                 </div>
@@ -50,6 +51,26 @@ const InitialUser = () => {
                     <div className="firework">
                         <img src={Nature} alt="Firework" />
                         <p>불꽃놀이</p>
+                    </div>
+                </div>
+            </section>
+            <section className="category-items">
+                <div className="items-box">
+                    <div className="nature">
+                        <img src={Nature} alt="Nature" />
+                        <p>어린이</p>
+                    </div>
+                </div>
+                <div className="items-box">
+                    <div className="culture">
+                        <img src={Nature} alt="Culture" />
+                        <p>운동</p>
+                    </div>
+                </div>
+                <div className="items-box">
+                    <div className="firework">
+                        <img src={Nature} alt="Firework" />
+                        <p>팝업</p>
                     </div>
                 </div>
             </section>
