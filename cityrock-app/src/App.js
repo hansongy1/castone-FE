@@ -23,6 +23,7 @@ function App() {
             <p>모바일뷰입니다.</p>
           </MobileView> */}
           
+          {/* 라우트 설정 */}
           <Routes>
             <Route path="/" element={<Home /> } />
             <Route path="/login" element={<Login />} />
