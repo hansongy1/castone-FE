@@ -42,6 +42,12 @@ body {
     background-color: grey;
 }
 
+.imgBox img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 
 /* 문화 콘텐츠 */
 .cate-box {

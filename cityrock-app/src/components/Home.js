@@ -1,11 +1,27 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import '../styles/main.css'; // 가운데 정렬
 
+import image1 from '../assets/carousel-test_1.png';
+import image2 from '../assets/carousel-test_2.png';
+import image3 from '../assets/carousel-test_3.png';
+
+const images = [image1, image2, image3];
+
 const Home = () => {
+    const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentImageIndex(prevIndex => (prevIndex + 1) % images.length);
+        }, 5000); // 5초마다 이미지 변경
+
+        return () => clearInterval(interval); // 컴포넌트 언마운트 시 인터벌 클리어
+    }, []);
+
     return React.createElement('section', { className: 'home-contents' },
         React.createElement('h1', { className: 'home-p' }, 'New'),
         React.createElement('div', { className: 'imgBox' },
-            React.createElement('img', { src: '', alt: '' })
+            React.createElement('img', { src: images[currentImageIndex], alt: '슬라이드 이미지' })
         ),
         React.createElement('div', { className: 'culture-contents' },
             React.createElement('div', { className: 'cate-title' },
