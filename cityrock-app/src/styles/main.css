@@ -37,16 +37,74 @@ body {
 .imgBox {
     width: 350px;
     height: 460px;
-    border-radius: 20px;
     margin-bottom: 104px;
-    background-color: grey;
+    /* background-color: grey; */
+    display: flex;
 }
 
+
 .imgBox img {
+    margin-right: 10px;
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: 460px;
+    /* object-fit: cover; */
 }
+
+/* 캐러셀 추가 시작 */
+.carousel-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+    position: relative;
+}
+
+.carousel-item {
+    transition: transform 0.5s ease;
+}
+
+.carousel-item.small {
+    flex: 1;
+    opacity: 0.6;
+    transform: scale(0.9);
+}
+
+.carousel-item.small img {
+    border-radius: 10px;
+}
+
+.carousel-item.large {
+    flex: 8;
+    transform: scale(1);
+}
+
+.carousel-item.large img {
+    border-radius: 20px;
+}
+
+.carousel-item img {
+    width: 100%;
+    display: block;
+}
+/* 캐러셀 추가 끝 */
+
+/*
+.img1 {
+    width: 350px;
+    height: 100%;
+    background-color: pink;
+}
+
+.img2 {
+    background-color: thistle;
+}
+
+.img3 {
+    background-color: azure;
+}
+
+*/
 
 
 /* 문화 콘텐츠 */

@@ -1,72 +1,123 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import '../styles/main.css'; // 가운데 정렬
 
-import image1 from '../assets/carousel-test_1.png';
-import image2 from '../assets/carousel-test_2.png';
-import image3 from '../assets/carousel-test_3.png';
+const CAROUSEL_IMAGES = [
+    'https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/fe1f7525-8451-4fdf-9df6-eb99d5997be6_2.jpg',
+    'https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/202a3575-509f-4e34-bbf8-59328d7b89eb_2.jpg',
+    'https://kfescdn.visitkorea.or.kr/kfes/upload/contents/db/e1c228b3-40a2-4fbd-8b34-f70ac9070c8a_2.jpg',
+];
 
-const images = [image1, image2, image3];
-
-const Home = () => {
+const Carousel = ({ carouselList }) => {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
+    const startX = useRef(0); // 추가된 부분
+    const currentX = useRef(0); // 추가된 부분
+    const isDragging = useRef(false); // 추가된 부분
 
     useEffect(() => {
         const interval = setInterval(() => {
-            setCurrentImageIndex(prevIndex => (prevIndex + 1) % images.length);
-        }, 5000); // 5초마다 이미지 변경
+            setCurrentImageIndex((prevIndex) => (prevIndex + 1) % carouselList.length);
+        }, 10000); // 3초마다 이미지 변경
 
         return () => clearInterval(interval); // 컴포넌트 언마운트 시 인터벌 클리어
-    }, []);
+    }, [carouselList.length]);
 
-    return React.createElement('section', { className: 'home-contents' },
-        React.createElement('h1', { className: 'home-p' }, 'New'),
-        React.createElement('div', { className: 'imgBox' },
-            React.createElement('img', { src: images[currentImageIndex], alt: '슬라이드 이미지' })
-        ),
-        React.createElement('div', { className: 'culture-contents' },
-            React.createElement('div', { className: 'cate-title' },
-                React.createElement('h1', { className: 'home-p' }, '문화 콘텐츠'),
-                React.createElement('div', { className: 'makdagi-1' })
-            ),
-            React.createElement('div', { className: 'cate-box' },
-                React.createElement('div', { className: 'c-img' },
-                    React.createElement('img', { src: '', alt: '' })
-                ),
-                React.createElement('div', { className: 'etc-text' },
-                    React.createElement('p', { className: 'text-t' }, 
-                        '화려한 조명, 멋진 조명', 
-                        React.createElement('br'), 
-                        '그리고 열정적인 아티스트 '),
-                    React.createElement('p', { className: 'link-t' }, '공연 바로가기')
-                )
-            ),
-            React.createElement('div', { className: 'cate-box' },
-                React.createElement('div', { className: 'c-img' }),
-                React.createElement('div', { className: 'etc-text' },
-                    React.createElement('p', { className: 'text-t' }, '현대적이고 창의적인'),
-                    React.createElement('p', { className: 'link-t' }, '전시회 바로가기')
-                )
-            ),
-            React.createElement('div', { className: 'cate-box' },
-                React.createElement('div', { className: 'c-img' }),
-                React.createElement('div', { className: 'etc-text' },
-                    React.createElement('p', { className: 'text-t' }, '다채로운 문화, 함성과 기쁨'),
-                    React.createElement('p', { className: 'link-t' }, '축제 바로가기')
-                )
-            )
-        ),
-        React.createElement('div', { className: 'recommend' },
-            React.createElement('div', { className: 'cate-title' },
-                React.createElement('h1', { className: 'home-p' }, '추천'),
-                React.createElement('div', { className: 'makdagi-2' })
-            ),
-            React.createElement('p', null, '당신에게 알맞은 컨텐츠를 추천해드릴게요!'),
-            React.createElement('div', { className: 'rec-alg' },
-                React.createElement('img', { src: '', alt: '' }),
-                React.createElement('img', { src: '', alt: '' }),
-                React.createElement('img', { src: '', alt: '' })
-            )
-        )
+    const previousImageIndex = (currentImageIndex - 1 + carouselList.length) % carouselList.length;
+    const nextImageIndex = (currentImageIndex + 1) % carouselList.length;
+
+
+    // 자동 슬라이드
+    const handleMouseDown = (e) => {
+        isDragging.current = true;
+        startX.current = e.clientX;
+    };
+
+    const handleMouseMove = (e) => {
+        if (!isDragging.current) return;
+        currentX.current = e.clientX;
+    };
+
+    const handleMouseUp = () => {
+        if (!isDragging.current) return;
+        isDragging.current = false;
+        if (currentX.current = startX.current > 50) {
+            // 오른쪽에서 왼쪽으로 슬라이드
+            setCurrentImageIndex((prevIndex) => (prevIndex - 1 + carouselList.length) % carouselList.length);
+        } else if (startX.current - currentX.current > 50) {
+            // 왼쪽에서 오른쪽으로 슬라이드
+            setCurrentImageIndex((prevIndex) => (prevIndex + 1) % carouselList.length);
+        }
+    };
+
+    return (
+        <div className='carousel-container'
+            onMouseDown={handleMouseDown}
+            onMouseMove={handleMouseMove}
+            onMouseUp={handleMouseUp}
+        >
+            <div className="carousel-container">
+                <div className="carousel-item small">
+                    <img src={carouselList[previousImageIndex]} alt="이전 슬라이드" />
+                </div>
+                <div className="carousel-item large">
+                    <img src={carouselList[currentImageIndex]} alt="현재 슬라이드" />
+                </div>
+                <div className="carousel-item small">
+                    <img src={carouselList[nextImageIndex]} alt="다음 슬라이드" />
+                </div>
+            </div>
+        </div>
+    );
+};
+
+const Home = () => {
+    return (
+        <section className="home-contents">
+            <h1 className="home-p">New</h1>
+            <div className="imgBox">
+                <Carousel carouselList={CAROUSEL_IMAGES} />
+            </div>
+            <div className="culture-contents">
+                <div className="cate-title">
+                    <h1 className="home-p">문화 콘텐츠</h1>
+                    <div className="makdagi-1" />
+                </div>
+                <div className="cate-box">
+                    <div className="c-img">
+                        <img src="" alt="" />
+                    </div>
+                    <div className="etc-text">
+                        <p className="text-t">화려한 조명, 멋진 조명<br />그리고 열정적인 아티스트</p>
+                        <p className="link-t">공연 바로가기</p>
+                    </div>
+                </div>
+                <div className="cate-box">
+                    <div className="c-img" />
+                    <div className="etc-text">
+                        <p className="text-t">현대적이고 창의적인</p>
+                        <p className="link-t">전시회 바로가기</p>
+                    </div>
+                </div>
+                <div className="cate-box">
+                    <div className="c-img" />
+                    <div className="etc-text">
+                        <p className="text-t">다채로운 문화, 함성과 기쁨</p>
+                        <p className="link-t">축제 바로가기</p>
+                    </div>
+                </div>
+            </div>
+            <div className="recommend">
+                <div className="cate-title">
+                    <h1 className="home-p">추천</h1>
+                    <div className="makdagi-2" />
+                </div>
+                <p>당신에게 알맞은 컨텐츠를 추천해드릴게요!</p>
+                <div className="rec-alg">
+                    <img src="" alt="" />
+                    <img src="" alt="" />
+                    <img src="" alt="" />
+                </div>
+            </div>
+        </section>
     );
 };
 
