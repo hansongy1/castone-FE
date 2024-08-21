@@ -1,8 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom'; // Link를 import
 import './styles/Festival.css';
 import FilterBar from './FilterBar';
 
-// 이미지 파일을 import 합니다
 import image1 from './assets/festival1.png';
 import image2 from './assets/festival2.png';
 import image3 from './assets/festival3.png';
@@ -15,7 +15,7 @@ const festivals = [
     title: '차 없는 잠수교 뚜벅뚜벅 축제',
     date: '2024.05.05 - 2024.06.23',
     location: '서울 서초구',
-    image: image1, // import한 이미지 사용
+    image: image1,
     startDate: new Date('2024-05-05'),
   },
   {
@@ -63,33 +63,45 @@ const calculateDday = (startDate) => {
     : `D+${Math.abs(daysDiff)}`;
 };
 
-const FestivalList = () => {
+const FestivalInfo = () => {
   return (
     <div>
       <FilterBar />
       <div className="festival-list">
         {festivals.map((festival) => (
-          <div key={festival.id} className="festival-card">
-            <div className="festival-info">
-              <h3>{festival.title}</h3>
-              <p>일시: {festival.date}</p>
-              <p>장소: {festival.location}</p>
-            </div>
-            <div className="image-container">
-              <img
-                src={festival.image}
-                alt={festival.title}
-                className="festival-image"
-              />
-              <div className="dday-overlay">
-                {calculateDday(festival.startDate)}
+          <Link
+            to={`/festival/${festival.id}`}
+            key={festival.id}
+            className="festival-card-link"
+          >
+            <div className="festival-card">
+              <div className="festival-info">
+                <h3>{festival.title}</h3>
+                <div className="date-location">
+                  <p className="bold-text">일시</p>
+                  <p>| {festival.date}</p>
+                </div>
+                <div className="location">
+                  <p className="bold-text">장소</p>
+                  <p>| {festival.location}</p>
+                </div>
+              </div>
+              <div className="image-container">
+                <img
+                  src={festival.image}
+                  alt={festival.title}
+                  className="festival-image"
+                />
+                <div className="dday-overlay">
+                  {calculateDday(festival.startDate)}
+                </div>
               </div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </div>
   );
 };
 
-export default FestivalList;
+export default FestivalInfo;
