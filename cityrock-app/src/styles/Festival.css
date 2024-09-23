@@ -11,13 +11,6 @@
   color: inherit; /* 호버, 포커스, 클릭 시에도 색상 유지 */
 }
 
-
-h1{
-  font-size: 25px;
-  margin-left:25px;
-  margin-bottom: 30px;
-}
-
 .festival-list {
   display: flex;
   flex-direction: column;
@@ -53,7 +46,7 @@ h1{
 .dday-overlay {
   position: absolute;
   width: 40px;
-  height: 14px;
+  height: 17px;
   top: 7px;
   left: 6px;
   background-color: white;
@@ -109,7 +102,7 @@ h1{
 }
 
 .festival-info .location p:first-child {
-  font-weight: 800; /* "장소" 텍스트만 굵게 설정 */
+  font-weight: 700; /* "장소" 텍스트만 굵게 설정 */
   margin-right: 3px;
 }
 
