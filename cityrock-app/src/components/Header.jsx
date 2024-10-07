@@ -15,7 +15,7 @@ const Header = () => {
     setMenuOpen(!isMenuOpen);
   };
 
-  const pathsToHideHeader = ['/aiprofile', '/AIprofileStep1', '/AIprofileStep2', '/AIprofilecreating'];
+  const pathsToHideHeader = ['/aiprofile', '/AIprofileStep1', '/AIprofileStep2', '/AIprofilecreating', '/arcamera'];
 
   if (pathsToHideHeader.includes(location.pathname)) {
     return null; // 아무것도 렌더링하지 않음
@@ -53,7 +53,7 @@ const Header = () => {
             <Link to="/aiprofile">AI 프로필</Link>
           </li>
           <li>
-            <Link to="/">AR 카메라</Link>
+            <Link to="/arcamera">AR 카메라</Link>
           </li>
           <li>
             <Link to="/">마이페이지</Link>
