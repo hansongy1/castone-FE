@@ -4,6 +4,7 @@ import Button from './Button';
 import server from './server';
 import './styles/Register.css';
 import { IoMdEye, IoMdEyeOff } from 'react-icons/io';
+import { useNavigate } from 'react-router-dom';
 
 function Register() {
   const [errMsg, setErrMsg] = useState('');
@@ -73,6 +74,11 @@ function Register() {
       setErrMsg('비밀번호가 일치하지 않습니다');
     }
   };
+  const navigate = useNavigate();  
+  const handleLoginClick = () => {
+    navigate('/login'); // 버튼 클릭 시 '/login'로 이동
+};
+
 
   return (
     <>
@@ -140,7 +146,7 @@ function Register() {
         />
         {errMsg && <div className="error-message">{errMsg}</div>}
         {successMsg && <div className="success-message">{successMsg}</div>}
-        <div className="loginq">
+        <div onClick={handleLoginClick} className="loginq">
           이미 계정이 있습니까? <span>로그인하기</span>{' '}
         </div>
       </div>

@@ -15,6 +15,11 @@ const Login = () => {
         setShowPassword(!showPassword);  // showPassword 상태를 반전시킴
     };
     
+    const handleRegisterClick = () => {
+    navigate('/register'); // 버튼 클릭 시 '/register'로 이동
+};
+
+    
 
     // 로그인 요청 처리 함수
     const loginUser = async (e) => {
@@ -76,6 +81,7 @@ const Login = () => {
                         <IoMdEye onClick={togglePasswordVisibility} />  // 눈 아이콘 클릭 시 비밀번호 표시
                     )}
                 </div>
+                <div onClick={handleRegisterClick} className="registergo">계정이 없다면? | 회원가입 하기</div>
                 <button type="submit">로그인</button>
             </form>
         </div>

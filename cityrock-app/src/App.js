@@ -22,6 +22,8 @@ import Review from './pages/review.js';
 import Reviewlist from './pages/reviewlist.js';
 import Reviewfav from './pages/reviewfav.js';
 import ArCamera from './ArCamera';
+import Register from './Register';
+import Login from './pages/Login';
 
 function App() {
   return (
@@ -31,6 +33,8 @@ function App() {
           <Header />
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/Register" element={<Register />} />
+            <Route path="/login" element={<Login />} />
             <Route path="/festival" element={<FestivalInfo />} />
             <Route path="/festival/:id" element={<FestivalDetail />} />
             <Route path="/aiprofile" element={<AIprofile />} />
